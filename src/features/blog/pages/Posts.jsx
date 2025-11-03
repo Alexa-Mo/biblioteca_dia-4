@@ -6,6 +6,7 @@ import { blogApi } from '../api/blogApi';
 import { PostCard } from '../components/PostCard';
 import { Loader } from '../components/Loader';
 import { ErrorMsg } from '../components/ErrorMsg';
+import { DarkModeToggle } from '../components/DarkModeToggle';
 import '../styles/posts.css';
 
 export const Posts = () => {
@@ -152,6 +153,10 @@ export const Posts = () => {
                   </svg>
                   <span>Contacto</span>
                 </Link>
+
+                <div className="dropdown-divider"></div>
+
+                <DarkModeToggle onToggle={() => setIsMenuOpen(false)} />
 
                 <div className="dropdown-divider"></div>
 

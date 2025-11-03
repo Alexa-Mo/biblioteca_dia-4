@@ -105,20 +105,23 @@ export const Contact = () => {
       <header className="contact-header">
         <div className="contact-header-content">
           <div className="contact-title-section">
-            <Link to="/blog" className="back-link">
-              <svg className="back-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Volver a la Biblioteca
-            </Link>
             <div className="title-content">
               <h1>Servicio de Biblioteca</h1>
               <p>Solicita libros, haz recomendaciones o reporta problemas</p>
             </div>
           </div>
 
-          {/* Menú de usuario (mismo que en Blog) */}
-          <div className="user-menu-wrapper">
+          {/* Botones de acción */}
+          <div className="header-actions">
+            <Link to="/blog" className="back-link">
+              <svg className="back-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Volver a la Biblioteca
+            </Link>
+            
+            {/* Menú de usuario (mismo que en Blog) */}
+            <div className="user-menu-wrapper">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
               className="user-menu-button"
@@ -126,7 +129,16 @@ export const Contact = () => {
               <div className="user-avatar-small">
                 {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
               </div>
-              <span>{user?.name || 'Usuario'}</span>
+              <span className="user-name-truncated">{user?.name || 'Usuario'}</span>
+              <svg 
+                className={`menu-chevron ${isMenuOpen ? 'menu-chevron-open' : ''}`} 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
 
             {isMenuOpen && (
@@ -152,6 +164,7 @@ export const Contact = () => {
                 </button>
               </div>
             )}
+            </div>
           </div>
         </div>
       </header>

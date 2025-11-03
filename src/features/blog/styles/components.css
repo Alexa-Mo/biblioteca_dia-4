@@ -372,3 +372,64 @@
     transform: scale(1);
   }
 }
+
+/* Estilos para modo oscuro - Post Cards */
+body.dark .post-card {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--dark-border);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(59, 130, 246, 0.15);
+}
+
+body.dark .post-card::before {
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+}
+
+body.dark .post-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 4px 10px rgba(59, 130, 246, 0.2);
+  border-color: var(--dark-primary);
+}
+
+body.dark .post-card-title {
+  background: linear-gradient(135deg, var(--dark-primary), var(--accent-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark .post-icon {
+  color: var(--dark-primary);
+}
+
+body.dark .book-image-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .book-authors {
+  color: var(--dark-text-secondary);
+}
+
+body.dark .author-label {
+  color: var(--dark-text-muted);
+}
+
+body.dark .post-card-body {
+  color: var(--dark-text-secondary);
+}
+
+body.dark .post-card-footer {
+  border-top: 1px solid var(--dark-border);
+}
+
+body.dark .read-more {
+  color: var(--dark-primary);
+}
+
+body.dark .read-more:hover {
+  color: var(--primary-400);
+}

@@ -5,6 +5,7 @@ import { useAuth } from '../../auth/hooks/useAuth';
 import { blogApi } from '../api/blogApi';
 import { Loader } from '../components/Loader';
 import { ErrorMsg } from '../components/ErrorMsg';
+import { DarkModeToggle } from '../components/DarkModeToggle';
 import '../styles/post-detail.css';
 
 export const PostDetail = () => {
@@ -151,6 +152,10 @@ export const PostDetail = () => {
 
                 <div className="dropdown-divider"></div>
 
+                <DarkModeToggle onToggle={() => setIsMenuOpen(false)} />
+
+                <div className="dropdown-divider"></div>
+
                 <button 
                   onClick={handleLogout}
                   className="dropdown-item logout-item"
@@ -213,15 +218,6 @@ export const PostDetail = () => {
             <div className="post-content">
               <h3>Descripción</h3>
               <p>{description}</p>
-            </div>
-
-            <div className="post-actions">
-              <Link to="/blog" className="action-button">
-                ← Volver a la Biblioteca
-              </Link>
-              <button onClick={() => window.scrollTo(0, 0)} className="action-button">
-                ↑ Volver arriba
-              </button>
             </div>
           </article>
         ) : null}

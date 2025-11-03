@@ -520,3 +520,90 @@
     font-size: 11px;
   }
 }
+
+/* Estilos para modo oscuro */
+body.dark .login-container {
+  background: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-secondary) 50%, #0c1e3d 100%);
+}
+
+body.dark .login-card {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--dark-border);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(59, 130, 246, 0.15);
+}
+
+body.dark .login-card:hover {
+  box-shadow: 
+    0 16px 32px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+body.dark .login-title {
+  background: linear-gradient(135deg, var(--dark-primary), var(--accent-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark .login-subtitle {
+  color: var(--dark-text-secondary);
+}
+
+body.dark .error-message {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  border: 1px solid #991b1b;
+  color: #fca5a5;
+}
+
+body.dark .form-label {
+  color: var(--dark-text-secondary);
+}
+
+body.dark .form-input {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1.5px solid var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+body.dark .form-input::placeholder {
+  color: var(--dark-text-muted);
+}
+
+body.dark .form-input:focus {
+  border-color: var(--dark-primary);
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 
+    0 0 0 3px rgba(59, 130, 246, 0.2),
+    0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+body.dark .input-icon {
+  color: var(--dark-text-muted);
+}
+
+body.dark .form-input:focus + .input-icon {
+  color: var(--dark-primary);
+}
+
+body.dark .login-submit-button {
+  background: linear-gradient(135deg, var(--dark-primary), var(--primary-700));
+}
+
+body.dark .login-submit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+}
+
+body.dark .login-footer-text {
+  color: var(--dark-text-secondary);
+}
+
+body.dark .login-footer-link {
+  color: var(--dark-primary);
+}
+
+body.dark .login-footer-link:hover {
+  color: var(--primary-400);
+}
