@@ -1,7 +1,7 @@
 // src/features/profile/pages/Profile.jsx
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../auth/hooks/useAuth';
-import '../styles/profile.css';
+import '../styles/Profile.css';
 
 export const Profile = () => {
   const { user, logout } = useAuth();
