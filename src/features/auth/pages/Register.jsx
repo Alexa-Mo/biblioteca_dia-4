@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import '../styles/register.css'; // Ajusta la ruta según tu estructura
+import '../styles/Register.css'; // Ajusta la ruta según tu estructura
 
 export const Register = () => {
   const navigate = useNavigate();
