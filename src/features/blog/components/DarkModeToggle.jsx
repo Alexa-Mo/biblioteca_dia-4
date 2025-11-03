@@ -1,28 +1,54 @@
 // src/features/blog/components/DarkModeToggle.jsx
 import { useState, useEffect } from 'react';
 
-export const DarkModeToggle = ({ onToggle }) => {
-  const [isDark, setIsDark] = useState(false);
+// Función para obtener el estado inicial del modo oscuro
+const getInitialDarkMode = () => {
+  // Si estamos en el cliente (navegador)
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('darkMode');
+    // Solo usar el valor guardado si existe
+    // Si no hay valor guardado, mantener modo claro por defecto
+    if (savedTheme !== null) {
+      return savedTheme === 'true';
+    }
+    // Por defecto, modo claro (no activar automáticamente según preferencia del sistema)
+    return false;
+  }
+  return false;
+};
 
-  // Función para actualizar la clase 'dark' en el body
-  const updateBodyClass = (dark) => {
+// Función para actualizar la clase 'dark' en el body
+const updateBodyClass = (dark) => {
+  if (typeof document !== 'undefined') {
     if (dark) {
       document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark');
     }
-  };
+  }
+};
 
-  // Cargar el estado guardado del localStorage al iniciar
+export const DarkModeToggle = ({ onToggle }) => {
+  // Inicializar el estado con el valor correcto desde el principio
+  const [isDark, setIsDark] = useState(() => {
+    const initialDark = getInitialDarkMode();
+    // Aplicar la clase inmediatamente al inicializar
+    updateBodyClass(initialDark);
+    return initialDark;
+  });
+
+  // Solo verificar si hay cambios en localStorage (para sincronización entre pestañas)
   useEffect(() => {
-    const savedTheme = localStorage.getItem('darkMode');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Si hay un valor guardado, usarlo; si no, usar la preferencia del sistema
-    const shouldBeDark = savedTheme !== null ? savedTheme === 'true' : prefersDark;
-    
-    setIsDark(shouldBeDark);
-    updateBodyClass(shouldBeDark);
+    const handleStorageChange = (e) => {
+      if (e.key === 'darkMode') {
+        const newValue = e.newValue === 'true';
+        setIsDark(newValue);
+        updateBodyClass(newValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   // Función para alternar el modo oscuro
