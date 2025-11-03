@@ -1,18 +1,18 @@
 // src/features/blog/components/DarkModeToggle.jsx
 import { useState, useEffect } from 'react';
 
-// Función para obtener el estado inicial del modo oscuro
-const getInitialDarkMode = () => {
-  // Si estamos en el cliente (navegador)
-  if (typeof window !== 'undefined') {
+// Función para obtener el estado actual del modo oscuro (solo lectura)
+const getCurrentDarkMode = () => {
+  if (typeof document !== 'undefined') {
+    // Primero verificar si el body ya tiene la clase 'dark'
+    if (document.body.classList.contains('dark')) {
+      return true;
+    }
+    // Si no, verificar localStorage
     const savedTheme = localStorage.getItem('darkMode');
-    // Solo usar el valor guardado si existe
-    // Si no hay valor guardado, mantener modo claro por defecto
     if (savedTheme !== null) {
       return savedTheme === 'true';
     }
-    // Por defecto, modo claro (no activar automáticamente según preferencia del sistema)
-    return false;
   }
   return false;
 };
@@ -29,15 +29,17 @@ const updateBodyClass = (dark) => {
 };
 
 export const DarkModeToggle = ({ onToggle }) => {
-  // Inicializar el estado con el valor correcto desde el principio
+  // Inicializar el estado leyendo SOLO el estado actual del body (sin modificar nada)
   const [isDark, setIsDark] = useState(() => {
-    const initialDark = getInitialDarkMode();
-    // Aplicar la clase inmediatamente al inicializar
-    updateBodyClass(initialDark);
-    return initialDark;
+    // Solo leer el estado actual del body, NO aplicar ningún cambio
+    if (typeof document !== 'undefined') {
+      return document.body.classList.contains('dark');
+    }
+    return false;
   });
 
-  // Solo verificar si hay cambios en localStorage (para sincronización entre pestañas)
+  // Este useEffect solo escucha cambios en localStorage de otras pestañas
+  // NO modifica el estado al montar el componente
   useEffect(() => {
     const handleStorageChange = (e) => {
       if (e.key === 'darkMode') {
