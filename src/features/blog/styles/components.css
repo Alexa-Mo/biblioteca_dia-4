@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  min-height: 50vh;
+  padding: 2rem 1rem;
+  min-height: 30vh;
 }
 
 .loader-content {
@@ -17,16 +17,16 @@
 .loader-book {
   display: flex;
   justify-content: center;
-  gap: 4px;
-  margin-bottom: 2rem;
+  gap: 2px;
+  margin-bottom: 1.25rem;
   animation: elegantFloat 3s ease-in-out infinite;
 }
 
 .book-page {
-  width: 8px;
-  height: 40px;
+  width: 4px;
+  height: 20px;
   background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
-  border-radius: 2px;
+  border-radius: 1px;
   animation: pageTurn 1.5s ease-in-out infinite;
 }
 
@@ -36,7 +36,7 @@
 
 .loader-text {
   color: var(--gray-600);
-  font-size: 1.1rem;
+  font-size: 0.72rem;
   font-weight: 500;
   background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
   -webkit-background-clip: text;
@@ -55,52 +55,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   background: rgba(254, 242, 242, 0.9);
   border: 1px solid #fecaca;
-  border-radius: 16px;
-  margin: 2rem 0;
+  border-radius: 8px;
+  margin: 1rem 0;
   backdrop-filter: blur(10px);
   animation: scaleIn 0.5s ease-out;
 }
 
 .error-icon {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   color: #dc2626;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   animation: gentleBounce 2s ease-in-out infinite;
 }
 
 .error-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #dc2626;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .error-message {
   color: #7f1d1d;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.72rem;
 }
 
 .retry-button {
   background: linear-gradient(135deg, #dc2626, #b91c1c);
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
 }
 
 .retry-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
 }
 
 /* Post Card Styles Mejorado */
@@ -115,7 +115,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 1.75rem;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   height: 100%;
@@ -124,8 +124,8 @@
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 8px 25px rgba(14, 165, 233, 0.08),
-    0 4px 12px rgba(14, 165, 233, 0.04);
+    0 4px 12px rgba(14, 165, 233, 0.08),
+    0 2px 6px rgba(14, 165, 233, 0.04);
   animation: fadeUp 0.6s ease-out;
 }
 
@@ -141,10 +141,10 @@
 }
 
 .post-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-4px) scale(1.01);
   box-shadow: 
-    0 20px 40px rgba(14, 165, 233, 0.15),
-    0 8px 20px rgba(14, 165, 233, 0.08);
+    0 8px 20px rgba(14, 165, 233, 0.15),
+    0 4px 10px rgba(14, 165, 233, 0.08);
   border-color: rgba(14, 165, 233, 0.3);
 }
 
@@ -160,12 +160,12 @@
 }
 
 .post-card-title {
-  font-size: 1.25rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--gray-800);
-  line-height: 1.4;
+  line-height: 1.3;
   flex: 1;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
   background: linear-gradient(135deg, var(--primary-700), var(--accent-600));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -176,8 +176,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   color: var(--primary-500);
   flex-shrink: 0;
   animation: gentleBounce 3s ease-in-out infinite;
@@ -189,16 +189,16 @@
   margin-bottom: 1.25rem;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
 }
 
 .book-image {
-  width: 140px;
-  height: 190px;
+  width: 80px;
+  height: 110px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.4s ease;
 }
 
@@ -207,8 +207,8 @@
 }
 
 .book-authors {
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
 }
 
 .author-label {
@@ -218,10 +218,10 @@
 
 .post-card-body {
   color: var(--gray-600);
-  line-height: 1.6;
+  line-height: 1.4;
   flex: 1;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.7rem;
 }
 
 .post-card-footer {
@@ -233,44 +233,44 @@
 .read-more {
   color: var(--primary-600);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.85rem;
 }
 
 .read-more:hover {
   color: var(--primary-700);
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 /* Search Section Mejorado */
 .search-section {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  padding: 2rem;
+  padding: 1.75rem;
   border-bottom: 1px solid rgba(229, 231, 235, 0.6);
   animation: fadeUp 0.6s 0.2s both;
 }
 
 .search-form {
   display: flex;
-  gap: 1rem;
-  max-width: 600px;
+  gap: 0.85rem;
+  max-width: 400px;
   margin: 0 auto 1rem;
 }
 
 .search-input {
   flex: 1;
-  padding: 1rem 1.25rem;
-  border: 2px solid var(--gray-200);
-  border-radius: 14px;
-  font-size: 1.05rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 0.7rem;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .search-input:focus {
@@ -278,74 +278,75 @@
   border-color: var(--primary-500);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 
-    0 0 0 4px rgba(14, 165, 233, 0.1),
-    0 4px 12px rgba(14, 165, 233, 0.1);
-  transform: translateY(-2px);
+    0 0 0 2px rgba(14, 165, 233, 0.1),
+    0 2px 6px rgba(14, 165, 233, 0.1);
+  transform: translateY(-1px);
 }
 
 .search-button {
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   color: white;
   border: none;
-  padding: 1rem 1.5rem;
-  border-radius: 14px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 3px 9px rgba(14, 165, 233, 0.3);
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
   white-space: nowrap;
+  font-size: 0.7rem;
 }
 
 .search-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(14, 165, 233, 0.4);
 }
 
 .search-icon {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
 }
 
 .search-examples {
   text-align: center;
   color: var(--gray-600);
-  font-size: 0.95rem;
+  font-size: 0.7rem;
 }
 
 .example-tag {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--gray-200);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  margin: 0 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   backdrop-filter: blur(10px);
 }
 
 .example-tag:hover {
   background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(14, 165, 233, 0.25);
 }
 
 .results-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   animation: fadeUp 0.6s 0.4s both;
 }
 
 .results-count {
   color: var(--gray-600);
-  font-size: 1rem;
+  font-size: 0.72rem;
   font-weight: 500;
 }
 
@@ -353,7 +354,7 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import '../styles/register.css'; // Ajusta la ruta según tu estructura
+import '../styles/Register.css';
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ export const Register = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
-                placeholder="Ingresa tu número de documento"
+                placeholder="Número de documento"
               />
             </div>
 
@@ -166,7 +166,7 @@ export const Register = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
-                placeholder="Elige un nombre de usuario"
+                placeholder="Nombre de usuario"
               />
             </div>
 
